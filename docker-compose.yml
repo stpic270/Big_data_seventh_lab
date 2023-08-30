@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+    cassandra:
+        image: stpic270/bd-secl-cassandra
+        volumes:
+            - cassandra_config:/config
+
+        environment:
+            - MAX_HEAP_SIZE=1024M
+            - HEAP_NEWSIZE=1M
+            - JAVA_OPTS=-Xmx1024m -Xms1024m
+
+
+
+    model:
+       image: stpic270/bd-sevthl-d:latest
+       ports:
+           - 77:70
+       volumes:
+           - cassandra_config:/app/test
+       #command: bash -c "python src/preprocess.py &&
+
+volumes:
+    cassandra_config:

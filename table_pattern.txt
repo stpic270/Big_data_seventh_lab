@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS (prediction int, packaging_label int, fat_g float, carbohydrates_g float, proteins_g float, nutrition_score int, fp_lan float, fp_lon float, id int, PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS (packaging text, fat_100g float, carbohydrates_100g float, proteins_100g float, nutrition_score_fr_100g float, first_packaging_code_geo text, id int, PRIMARY KEY(id));
